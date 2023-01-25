@@ -1,0 +1,2 @@
+Project Name : Weather Clone
+Description of the Project -> in this Section , That I have completed everything like, Using api for fetching the data from opensWeather.. Eventually. I have done this application by using html and css and javascript.
