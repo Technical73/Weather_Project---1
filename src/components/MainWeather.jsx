@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import cloudy from "../src/assets/cloudy.jpg";
-import hot from "./assets/hot.jpg";
-import Inputs from "./Inputs";
-import Temperature from "./Temperature";
+import cloudy from "../assets/cloudy.jpg";
+import hot from "../assets/hot.jpg";
+import Inputs from "../components/Inputs";
+import Temperature from "../components/Temperature";
 import "./index.css";
-import Descriptions from "./Descriptions";
+import Descriptions from "../components/Descriptions";
 import { useEffect } from "react";
-import { getFormattedData } from "./WeatherServices";
+import { getFormattedData } from "../WeatherServices";
 
 const MainWeather = () => {
   const [weather, setWeather] = useState(null);
