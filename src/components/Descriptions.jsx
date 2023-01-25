@@ -5,7 +5,7 @@ import { FaArrowUp, FaArrowDown, FaWind } from "react-icons/fa";
 import { BiHappy } from "react-icons/bi";
 import { MdCompress, MdOutlineWaterDrop } from "react-icons/md";
 
-const Descriptions = ({ weather, units }) => {
+const Descriptions = React.memo(({ weather, units }) => {
   const tempUnit = units === "metric" ? "°C" : "°F";
   const windUnit = units === "metric" ? "m/s" : "m/h";
   const cards = [
@@ -67,6 +67,6 @@ const Descriptions = ({ weather, units }) => {
       </div>
     </>
   );
-};
+});
 
 export default Descriptions;

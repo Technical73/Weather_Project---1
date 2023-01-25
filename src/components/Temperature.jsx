@@ -1,6 +1,6 @@
 import React from "react";
 
-const Temperature = ({ weather, units }) => {
+const Temperature = React.memo(({ weather, units }) => {
   return (
     <>
       <div className="section section_temperature">
@@ -24,6 +24,6 @@ const Temperature = ({ weather, units }) => {
       </div>
     </>
   );
-};
+});
 
 export default Temperature;
