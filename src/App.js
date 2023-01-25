@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback, useDebugValue } from "react";
+import { useState } from "react";
+import Child from "./Child";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [data, setData] = useState(["props1", "props2", "props3"]);
+  const [cart, setCart] = useState(0);
+
+  function handleCount() {
+    setCount((prev) => prev + 1);
+  }
+  useDebugValue(count);
+
+  const addCart = useCallback(() => {
+    setCart((prev) => prev + 1);
+  }, [cart]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>Count: {count}</h3>
+      <button type="button" onClick={handleCount}>
+        Count the Value
+      </button>
+      <h3>Cart: {cart} </h3>
+
+      {data.map((items, i) => {
+        return <Child name={items} key={i} addCart={addCart} />;
+      })}
     </div>
   );
 }
